@@ -1,0 +1,31 @@
+name: ${name}
+version: ${version}
+description: ${description}
+author: ${author}
+website: ${url}
+
+main: ${mainClass}
+
+commands:
+    warp:
+        description: Warp you to a location
+        permission: mcsigns.warp
+        usage: /<command> warp_name
+    warps:
+        description: Display list of warps
+        permission: mcsigns.warp
+        usage: /<command>
+    setwarp:
+        description: Set a new warp in current location
+        permission: mcsigns.warp
+        usage: /<command> warp_name
+    loc:
+        description: Set a new warp in current location
+        permission: mcsigns.warp
+        usage: /<command> warp_name
+    repair:
+        description: Repair item in hand
+        permission: mcsigns.warp
+        usage: /<command>
+
+permissions: {}
