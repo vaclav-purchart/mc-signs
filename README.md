@@ -23,7 +23,7 @@ home
 > Teleport your player to "warp name" location (if it is defined).
 - `warps` - usage `/warps` 
 > Display list of created warps (stored in plugin's directory).
-- `setwarp` (alias `loc`) - usage: `/setwarp home`
+- `setwarp` (alias `loc`) - usage: `/setwarp <warp name>`
 > It will create a new warp location. If the location already exists it will be overwritten. You can later teleport player to this location by `warp` command.
 - `repair` - usage `/repair`
 > Repair item in your hand.
