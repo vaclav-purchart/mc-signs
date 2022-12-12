@@ -6,6 +6,8 @@ website: ${url}
 
 main: ${mainClass}
 
+# softdepend: dynmap
+
 commands:
     warp:
         description: Warp you to a location

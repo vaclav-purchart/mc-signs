@@ -15,7 +15,14 @@ import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import cz.lipop.mcsigns.commands.RepairCommand;
+import cz.lipop.mcsigns.commands.SetWarpCommand;
+import cz.lipop.mcsigns.commands.WarpCommand;
+import cz.lipop.mcsigns.commands.WarpsCommand;
+
 public class McSigns extends JavaPlugin implements Listener {
+	public IntegrationDynmap integrationDynmap;
+
 	@Override
 	public void onDisable() {
 		// Don't log disabling, Spigot does that for you automatically!
@@ -25,6 +32,8 @@ public class McSigns extends JavaPlugin implements Listener {
 	public void onEnable() {
 		// Don't log enabling, Spigot does that for you automatically!
 		getServer().getPluginManager().registerEvents(this, this);
+		
+		this.integrationDynmap = new IntegrationDynmap(this);
 
 		// Commands enabled with following method must have entries in plugin.yml
 		getCommand("warp").setExecutor(new WarpCommand(this));
@@ -89,5 +98,4 @@ public class McSigns extends JavaPlugin implements Listener {
 			}
 		}
 	}
-
 }

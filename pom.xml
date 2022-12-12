@@ -3,7 +3,7 @@
     <groupId>cz.lipop.mcsigns</groupId>
     <artifactId>McSigns</artifactId>
     <!-- Version is used in plugin.yml -->
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <!-- Plugin Information -->
@@ -41,6 +41,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <artifactId>spigot-api</artifactId>
             <version>1.8-R0.1-SNAPSHOT</version>
         </dependency>
+		<!-- https://mvnrepository.com/artifact/us.dynmap/dynmap-api -->
+		<dependency>
+		    <groupId>us.dynmap</groupId>
+		    <artifactId>dynmap-api</artifactId>
+		    <version>3.1</version>
+		    <scope>provided</scope>
+		</dependency>
     </dependencies>
 
     <repositories>
@@ -48,6 +55,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <id>cz.lipop.mcsigns</id>
             <url>https://github.com/vaclav-purchart/mc-signs</url>
         </repository>
+		<repository>
+			<releases>
+			</releases>
+			<snapshots>
+			</snapshots>
+			<id>dynmap-repo</id>
+			<url>http://repo.mikeprimm.com/</url>
+		</repository>
     </repositories>
 
     <build>

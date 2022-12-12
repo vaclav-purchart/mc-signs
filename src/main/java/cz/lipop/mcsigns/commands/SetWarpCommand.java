@@ -1,4 +1,4 @@
-package cz.lipop.mcsigns;
+package cz.lipop.mcsigns.commands;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,6 +9,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import cz.lipop.mcsigns.McSigns;
+import cz.lipop.mcsigns.Warp;
 
 public class SetWarpCommand implements CommandExecutor {
 	McSigns plugin;
@@ -56,6 +59,16 @@ public class SetWarpCommand implements CommandExecutor {
 				else {
 					p.sendMessage("§9Warp " + warpName + " set!"); 
 				}
+				
+				this.plugin.integrationDynmap.createMarker(new Warp(
+					warpName, 
+					pos.getWorld().getName(),
+					pos.getX(),
+					pos.getY(),
+					pos.getZ(),
+					pos.getPitch(),
+					pos.getYaw()
+				));
 		        return true;
 
 			} catch (IOException e) {

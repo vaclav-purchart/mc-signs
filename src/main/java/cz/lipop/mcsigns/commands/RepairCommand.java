@@ -1,10 +1,12 @@
-package cz.lipop.mcsigns;
+package cz.lipop.mcsigns.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+
+import cz.lipop.mcsigns.McSigns;
 
 public class RepairCommand implements CommandExecutor {
 	McSigns plugin;

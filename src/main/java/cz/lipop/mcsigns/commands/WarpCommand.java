@@ -1,4 +1,4 @@
-package cz.lipop.mcsigns;
+package cz.lipop.mcsigns.commands;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,6 +14,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import cz.lipop.mcsigns.ListWarps;
+import cz.lipop.mcsigns.McSigns;
 
 public class WarpCommand implements CommandExecutor {
 	McSigns plugin;
