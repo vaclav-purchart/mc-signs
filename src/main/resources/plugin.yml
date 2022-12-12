@@ -28,4 +28,27 @@ commands:
         permission: mcsigns.warp
         usage: /<command>
 
-permissions: {}
+permissions:
+    mcsigns.*:
+        description: Gives access to all mcsigns functions
+        children: 
+            mcsigns.warp: true
+            mcsigns.warps: true
+            mcsigns.setwarp: true
+            mcsigns.loc: true
+            mcsigns.repair: true
+    mcsigns.warp:
+        description: Use warp previously set by /setwarp
+        default: true 
+    mcsigns.warps:
+        description: List all defined warps
+        default: true 
+    mcsigns.setwarp:
+        description: Add warp with specified name /setwarp warp_name
+        default: true 
+    mcsigns.loc:
+        description: Alias for /setwarp. Add warp with specified name /setwarp warp_name
+        default: true 
+    mcsigns.repair:        
+        description: Repair currently held item
+        default: true 
