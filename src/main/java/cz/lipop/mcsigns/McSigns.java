@@ -1,5 +1,6 @@
 package cz.lipop.mcsigns;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -32,6 +33,12 @@ public class McSigns extends JavaPlugin implements Listener {
 	public void onEnable() {
 		// Don't log enabling, Spigot does that for you automatically!
 		getServer().getPluginManager().registerEvents(this, this);
+
+		File folder = this.getDataFolder();
+		// create data folder on plugin enable to prevent error in listing warps
+		if (!folder.exists()) {
+			folder.mkdir();
+		}
 		
 		this.integrationDynmap = new IntegrationDynmap(this);
 
