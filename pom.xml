@@ -3,7 +3,7 @@
 	<groupId>cz.lipop.mcsigns</groupId>
 	<artifactId>McSigns</artifactId>
 	<!-- Version is used in plugin.yml -->
-	<version>1.2-SNAPSHOT</version>
+	<version>1.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<!-- Plugin Information -->
@@ -46,8 +46,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		<dependency>
 			<groupId>us.dynmap</groupId>
 			<artifactId>dynmap-api</artifactId>
-			<version>3.1</version>
+			<version>3.6</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>us.dynmap</groupId>
+			<artifactId>DynmapCoreAPI</artifactId>
+			<version>3.6</version>
 		</dependency>
 	</dependencies>
 
@@ -95,10 +100,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<version>3.13.0</version>
 				<configuration>
-					<source>17</source>
-					<target>17</target>
+					<source>21</source>
+					<target>21</target>
+					<release>21</release>
 				</configuration>
 			</plugin>
 		</plugins>
