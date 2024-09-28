@@ -1,5 +1,6 @@
 name: ${name}
 version: ${version}
+api-version: ${spigotApiVersion}
 description: ${description}
 author: ${author}
 website: ${url}

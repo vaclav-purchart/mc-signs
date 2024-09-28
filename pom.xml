@@ -35,6 +35,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		<author>lipop</author>
 		<mainClass>cz.lipop.mcsigns.McSigns</mainClass>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spigotApiVersion>1.21</spigotApiVersion>
 	</properties>
 
 	<dependencies>
