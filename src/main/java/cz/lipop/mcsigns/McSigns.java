@@ -1,12 +1,15 @@
 package cz.lipop.mcsigns;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
+import org.bukkit.block.sign.SignSide;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -32,6 +35,12 @@ public class McSigns extends JavaPlugin implements Listener {
 	public void onEnable() {
 		// Don't log enabling, Spigot does that for you automatically!
 		getServer().getPluginManager().registerEvents(this, this);
+
+		File folder = this.getDataFolder();
+		// create data folder on plugin enable to prevent error in listing warps
+		if (!folder.exists()) {
+			folder.mkdir();
+		}
 		
 		this.integrationDynmap = new IntegrationDynmap(this);
 
@@ -46,7 +55,7 @@ public class McSigns extends JavaPlugin implements Listener {
 	@EventHandler
 	public void onSignChange(SignChangeEvent e) throws IOException {
 		Player p = e.getPlayer();
-		System.out.println("Sign adds: " + e.getLine(0));
+		this.getLogger().log(Level.WARNING, "Sign adds: " + e.getLine(0));
 		String command = e.getLine(0);
 
 		if (command.equalsIgnoreCase("[warp]")) {
@@ -88,12 +97,13 @@ public class McSigns extends JavaPlugin implements Listener {
 		Player p = e.getPlayer();
 		if (b.getState() instanceof Sign) {
 			Sign sign = (Sign) b.getState();
-			String command = ChatColor.stripColor(sign.getLine(0));
+			SignSide playerFacingSide = sign.getTargetSide(p);
+			String command = ChatColor.stripColor(playerFacingSide.getLine(0));
 			if (command.equalsIgnoreCase("[repair]")) {
 				Bukkit.dispatchCommand(p, "repair");
 			}
 			if (command.equalsIgnoreCase("[warp]")) {
-				String warp = ChatColor.stripColor(sign.getLine(1)).toLowerCase();
+				String warp = ChatColor.stripColor(playerFacingSide.getLine(1)).toLowerCase();
 				Bukkit.dispatchCommand(p, "warp " + warp);
 			}
 		}

@@ -6,9 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import org.bukkit.Location;
-import org.bukkit.World;
-
 public class Warp {
 	public String name;
 
